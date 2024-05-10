@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Select, MenuItem, FormControl, InputLabel, Card, CardContent, Typography } from '@mui/material';
 import TestCaseDetails from './TestCaseDetails';
 
 const FileList = () => {
-  const [files, setFiles] = useState([]);
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [files, setFiles] = useState([]); // Holds the list of available files
+  const [selectedFile, setSelectedFile] = useState(null); // State for the selected file
 
   useEffect(() => {
+    // Fetch the list of files
     const fetchFiles = async () => {
       const response = await axios.get('http://localhost:3001/files');
       setFiles(response.data);
@@ -16,6 +17,7 @@ const FileList = () => {
   }, []);
 
   const handleFileSelect = async (e) => {
+    // Fetch the selected file's content
     const file = e.target.value;
     const response = await axios.get(`http://localhost:3001/file/${file}`);
     setSelectedFile(response.data);
@@ -26,7 +28,6 @@ const FileList = () => {
       <FormControl fullWidth>
         <InputLabel>Select a File</InputLabel>
         <Select value={selectedFile ? selectedFile.name : ''} onChange={handleFileSelect}>
-          <MenuItem value="">-- Select a File --</MenuItem>
           {files.map((file) => (
             <MenuItem key={file} value={file}>
               {file}
@@ -42,7 +43,6 @@ const FileList = () => {
             {selectedFile.testCases.map((testCase) => (
               <TestCaseDetails key={testCase.name} testCase={testCase} />
             ))}
-          )}
           </CardContent>
         </Card>
       )}
