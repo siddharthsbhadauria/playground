@@ -1,0 +1,70 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+main {
+  padding: 20px;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 45%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+select {
+  margin-left: 10px;
+}
+
+.bar-graph-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bar-graph {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.bar {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  color: white;
+}
+
+.y-label {
+  margin-right: 10px;
+  width: 120px; /* Adjust width as needed */
+  text-align: right;
+  color: #333; /* Adjust color as needed */
+}
