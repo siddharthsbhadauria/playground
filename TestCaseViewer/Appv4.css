@@ -1,0 +1,42 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    width: 45%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+select {
+    margin-left: 10px;
+}
